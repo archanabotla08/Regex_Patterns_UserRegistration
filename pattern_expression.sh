@@ -1,8 +1,8 @@
 #!/bin/bash -x
 shopt -s extglob
-read -p "enter the last name: " lastname
-pattern="^[A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z]{1}[a-z]{2,}"
-if [[ $lastname =~ $pattern ]]
+read -p "enter the email: " email
+pattern="^[a-zA-Z0-9]+([.+_-][a-zA-Z0-9]){0,1}@[a-zA-Z]+([.]{1,2}[a-z]{2,}){1,2}"
+if [[ $email =~ $pattern ]]
 then
         echo "valid"
 else
