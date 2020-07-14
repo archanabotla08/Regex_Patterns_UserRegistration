@@ -1,11 +1,13 @@
 #!/bin/bash -x
 shopt -s extglob
-read -p "enter the email: " email
-pattern="^[a-zA-Z0-9]+([.+_-][a-zA-Z0-9]){0,1}@[a-zA-Z]+([.]{1,2}[a-z]{2,}){1,2}"
-if [[ $email =~ $pattern ]]
+read -p "enter the number: " number
+
+#pattern="^[0-9]{10}$|([9]{1}[1]{1}\\s([0-9]{10})$)"
+
+if [[ $number =~ ^[9]{1}[1]{1}([^a-zA-Z]{0}\\s([0-9]{10})$) ]]
 then
-        echo "valid"
+        echo "match"
 else
-        echo "invalid"
+        echo "no match"
 fi
 
