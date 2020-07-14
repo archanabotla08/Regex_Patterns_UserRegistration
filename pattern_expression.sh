@@ -1,7 +1,7 @@
 #!/bin/bash -x
 shopt -s extglob
 read -p "enter the password: " password
-pattern="^[a-zA-Z]{8}"
+pattern="^[a-z]{7,}[A-Z]{1,}"
 if [[ $password =~ $pattern ]]
 then
         echo "valid"
