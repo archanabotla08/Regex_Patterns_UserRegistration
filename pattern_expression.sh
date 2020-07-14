@@ -1,13 +1,11 @@
 #!/bin/bash -x
 shopt -s extglob
-read -p "enter the number: " number
-
-#pattern="^[0-9]{10}$|([9]{1}[1]{1}\\s([0-9]{10})$)"
-
-if [[ $number =~ ^[9]{1}[1]{1}([^a-zA-Z]{0}\\s([0-9]{10})$) ]]
+read -p "enter the password: " password
+pattern="^[a-zA-Z]{8}"
+if [[ $password =~ $pattern ]]
 then
-        echo "match"
+        echo "valid"
 else
-        echo "no match"
+        echo "no valid"
 fi
 
