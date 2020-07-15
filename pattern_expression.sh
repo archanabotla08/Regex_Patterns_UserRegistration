@@ -50,11 +50,12 @@ function password()
 read -p "enter the password : " password
 pattern_validation_1="^[a-zA-Z0-9]{8}"
 pattern_validation_2="[[:upper:]]+"
-if [[ $password =~ $pattern_validation_1 && $password =~ $pattern_validation_2 ]]
+pattern_validation_3="[[:digit:]]+"
+if [[ $password =~ $pattern_validation_1 && $password =~ $pattern_validation_2 && $password =~ $pattern_validation_3 ]]
 then
         echo "Password Valid"
 else
-        echo "Password Invalid - Enter /password with mininum 8 characters or digits and atleast 1 Captial/"
+        echo "Password Invalid - Enter /password with mininum 8 characters or digits and atleast 1 Captial and at least 1 digit/"
 fi
 }
 
