@@ -34,7 +34,19 @@ else
         echo "Email Invalid - Enter with /FirstCharacters followed by [special characters or numbers then @ with [alpha values] .[required characters]]/"
 fi
 }
+function mobileNumber()
+{
+read -p "enter the mobile number: " mobileno
+pattern="^[9]{1}[1]{1}[[:space:]][6-9]{1}[0-9]{9}$"
+if [[ $mobileno =~ $pattern ]]
+then
+        echo "Mobile number valid"
+else
+        echo "Mobile Number Invalid - Enter/91 space followed by 10 digits/"
+fi
+}
 
 firstName
 lastName
 email
+mobileNumber
