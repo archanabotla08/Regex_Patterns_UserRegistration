@@ -4,8 +4,8 @@ read -p "enter the first name: " firstname
 pattern="^[[:upper:]]{1}[[:lower:]]{2,}"
 if [[ $firstname =~ $pattern ]]
 then
-        echo "valid"
+        echo "FirstName valid"
 else
-        echo "invalid"
+        echo "FirstName Invalid - Enter with /FirstCharacter Captial/"
 fi
 
