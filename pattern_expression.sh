@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 shopt -s extglob
 function firstName()
 {
@@ -45,8 +45,20 @@ else
         echo "Mobile Number Invalid - Enter/91 space followed by 10 digits/"
 fi
 }
+function password()
+{
+read -p "enter the password : " password
+pattern="^[a-zA-Z0-9]{8}"
+if [[ $password =~ $pattern ]]
+then
+        echo "Password Valid"
+else
+        echo "Password Invalid - Enter /password with mininum 8 characters or digits/"
+fi
+}
 
 firstName
 lastName
 email
 mobileNumber
+password
