@@ -51,11 +51,13 @@ read -p "enter the password : " password
 pattern_validation_1="^[a-zA-Z0-9]{8}"
 pattern_validation_2="[[:upper:]]+"
 pattern_validation_3="[[:digit:]]+"
-if [[ $password =~ $pattern_validation_1 && $password =~ $pattern_validation_2 && $password =~ $pattern_validation_3 ]]
+pattern_validation_4="[A-Za-z0-9]*[@#$%^&*-_=+.][A-Za-z0-9]*$"
+
+if [[ $password =~ $pattern_validation_1 && $password =~ $pattern_validation_2 && $password =~ $pattern_validation_3 && $password =~ $pattern_validation_4 ]]
 then
         echo "Password Valid"
 else
-        echo "Password Invalid - Enter /password with mininum 8 characters or digits and atleast 1 Captial and at least 1 digit/"
+        echo "Password Invalid - Enter /password with mininum 8 characters or digits and atleast 1 Captial and at least 1 digit and at least 1 special symbol/"
 fi
 }
 
